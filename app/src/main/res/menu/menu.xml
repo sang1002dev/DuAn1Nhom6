@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuTrangChu"
+        android:title="Trang chủ"
+        android:icon="@drawable/frame4_home"/>
+    <item
+        android:id="@+id/menuYeuThich"
+        android:title="Yêu thích"
+        android:icon="@drawable/frame4_trai_tim"/>
+    <item
+        android:id="@+id/menuDonHang"
+        android:title="Đơn hàng"
+        android:icon="@drawable/donhang_icon"
+        />
+    <item
+        android:title="DANH MỤC SẢN PHẨM">
+        <menu>
+            <item
+                android:id="@+id/menuVoCoNgan"
+                android:title="Iphone"
+                android:icon="@drawable/frame4_mui_ten"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/menuVoCoCao"
+                android:title="SamSung"
+                android:icon="@drawable/frame4_mui_ten"
+                app:showAsAction="always"/>
+            <item
+                android:id="@+id/menuVoCoTrung"
+                android:title="Oppo"
+                android:icon="@drawable/frame4_mui_ten"
+                app:showAsAction="always"/>
+            <item
+                android:id="@+id/menuVoLuoi"
+                android:title="Ipad"
+                android:icon="@drawable/frame4_mui_ten"/>
+            <item
+                android:id="@+id/menuVoBasic"
+                android:title="Vivo"
+                android:icon="@drawable/frame4_mui_ten"/>
+
+        </menu>
+    </item>
+
+    <item
+        android:title="Quản lý dành cho admin">
+        <menu>
+            <item
+                android:id="@+id/menuQLNguoiDung"
+                android:title="Quản lý người dùng"
+                android:icon="@drawable/frame4_mui_ten"
+                app:showAsAction="ifRoom"/>
+            <item
+                android:id="@+id/menuQlDonHang"
+                android:title="Quản lý đơn hàng"
+                android:icon="@drawable/frame4_mui_ten"
+                app:showAsAction="always"/>
+            <item
+                android:id="@+id/menuLoaiSanPham"
+                android:title="Quản lý loại sản phẩm"
+                android:icon="@drawable/frame4_mui_ten"
+                app:showAsAction="always"/>
+            <item
+                android:id="@+id/menuSanPham"
+                android:title="Quản lý sản phẩm"
+                android:icon="@drawable/frame4_mui_ten"/>
+            <item
+                android:title="Thông kê doanh thu"
+                android:icon="@drawable/frame4_mui_ten"/>
+        </menu>
+    </item>
+</menu>
