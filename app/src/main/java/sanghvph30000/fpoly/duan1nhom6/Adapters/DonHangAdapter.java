@@ -2,6 +2,7 @@ package sanghvph30000.fpoly.duan1nhom6.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +72,9 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
                         boolean check = hoaDonChiTietDAO.thayDoiTrangThaiDonHang(newTrangThai, hoaDon_id, sanPham_id);
                         if (check){
                             list.clear();
-                            list = hoaDonChiTietDAO.getDonHangByHDCT(0);
+                            SharedPreferences sharedPreferences = context.getSharedPreferences("NGUOIDUNG",Context.MODE_PRIVATE);
+                            int nguoiDung_id = sharedPreferences.getInt("nguoiDung_id",-1);
+                            list = hoaDonChiTietDAO.getDonHangByHDCT(0,nguoiDung_id);
                             notifyDataSetChanged();
                         }
                     }
@@ -89,7 +92,9 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
                         boolean check = hoaDonChiTietDAO.thayDoiTrangThaiDonHang(newTrangThai, hoaDon_id, sanPham_id);
                         if (check){
                             list.clear();
-                            list = hoaDonChiTietDAO.getDonHangByHDCT(1);
+                            SharedPreferences sharedPreferences = context.getSharedPreferences("NGUOIDUNG",Context.MODE_PRIVATE);
+                            int nguoiDung_id = sharedPreferences.getInt("nguoiDung_id",-1);
+                            list = hoaDonChiTietDAO.getDonHangByHDCT(1,nguoiDung_id);
                             notifyDataSetChanged();
                         }
                     }

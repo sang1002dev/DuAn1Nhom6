@@ -179,11 +179,11 @@
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#E2BCB7"
+                android:backgroundTint="#00BCD4"
                 android:layout_marginTop="130dp"
                 android:text="ĐĂNG XUẤT"
                 android:textColor="#4E352F"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

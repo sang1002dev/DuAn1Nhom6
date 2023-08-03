@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -51,8 +51,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_gio_hang"
             android:layout_width="match_parent"
-            android:layout_height="469dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="519dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="15dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
@@ -90,19 +90,17 @@
                 android:text="vnđ"
                 android:textSize="28sp" />
         </LinearLayout>
+        <Button
+            android:id="@+id/btnMua_hang"
+            android:layout_width="159dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#03A9F4"
+            android:text="Mua hàng"
+            android:textColor="#4E352F"
+            android:textSize="20sp"
+            android:layout_marginLeft="130dp"
+            android:textStyle="normal" />
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btnMua_hang"
-        android:layout_width="159dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="#03A9F4"
-        android:text="Mua hàng"
-        android:textColor="#4E352F"
-        android:textSize="20sp"
-        android:textStyle="normal" />
-</RelativeLayout>
+</LinearLayout>

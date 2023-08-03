@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
         imgHome = view.findViewById(R.id.imgHome);
         imgYeu_thich = view.findViewById(R.id.imgYeu_thich);
         imgGio_hang = view.findViewById(R.id.imgGio_hang);
-
+        edTimkiem = view.findViewById(R.id.edTimKiem);
 
         oriList = sanPhamDAO.getDsSanPham();
 
@@ -115,10 +115,6 @@ public class HomeFragment extends Fragment {
             int giaSanPham = sanPham.getGiaSanPham();
             String tenSanPham = sanPham.getTenSanPham().toLowerCase();
             String normalizedMaSach = normalizeString(tenSanPham);
-//            if (giaSanPham == Integer.parseInt(searchText) || ten.contains(searchText)) {
-//                searchResults.add(sanPham);
-//            }
-
             if (isNumeric(searchText)) {
                 // Tìm kiếm theo giá sản phẩm
                 if (giaSanPham <= Integer.parseInt(searchText)) {
@@ -130,7 +126,6 @@ public class HomeFragment extends Fragment {
                     searchResults.add(sanPham);
                 }
             }
-
 
         }
 

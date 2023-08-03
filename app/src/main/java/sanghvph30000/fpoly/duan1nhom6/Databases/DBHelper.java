@@ -79,8 +79,8 @@ public class DBHelper extends SQLiteOpenHelper {
          * - Giá trị tại cột 'loaiTaiKhoan': 1 --> admin, 0 --> người dùng */
 
         db.execSQL("insert into NGUOIDUNG values" +
-                "(1,'sang', 'Hoang Van Sang', '0968786843', 'sanghvph30000@mail.com','sang','admin', 1,0)," +
-                "(2,'avatar_mac_dinh', 'Trinh Dinh Nam', '0375816024', 'namdtph12345@gmail.com','nam','123', 0,0)");
+                "(1,'imgadmin', 'Hoang Van Sang', '0968786843', 'sanghvph30000@mail.com','sang','admin', 1,0)," +
+                "(2,'imguser', 'Trinh Dinh Nam', '0375816024', 'namdtph12345@gmail.com','nam','123', 0,0)");
 
         /*2: Bang 'BINHLUAN'
          * Cấu trúc cột: binhLuan_id, nguoiDung_id, sanPham_id, noiDung, thoiGian */
@@ -124,23 +124,23 @@ public class DBHelper extends SQLiteOpenHelper {
                 "(10, 2, 'SamSung Galaxy X', 'img_17', 19000000, 'SamSung đẳng cấp, siêu bền và giá cả phù hợp',39, 0,0)," +
 
                 // vo co trung
-                "(11, 3, 'Oppo Neo 3', 'img_18', 17000000, 'Vớ nữ cổ trung, êm chân thoát mát',40, 0,0)," +
-                "(12, 3, 'Oppo Note 8', 'img_19', 16000000, 'Vớ thể thao nữ cổ trung, êm chân thoát mát',41, 0,0)," +
-                "(13, 3, 'Oppo Reno Z', 'img_20', 15000000, 'Vớ thể thao nữ cổ trung, êm chân thoát mát',42, 1,0)," +
-                "(14, 3, 'Oppo ZX', 'img_21', 14000000, 'Vớ thể thao nữ cổ trung, êm chân thoát mát',45, 0,0)," +
+                "(11, 3, 'Oppo Neo 3', 'img_18', 17000000, 'Oppo Neo3 giá cả phù hợp, chất lượng siêu bền',40, 0,0)," +
+                "(12, 3, 'Oppo Note 8', 'img_19', 16000000, 'Oppo Neo3 giá cả phù hợp, chất lượng siêu bền',41, 0,0)," +
+                "(13, 3, 'Oppo Reno Z', 'img_20', 15000000, 'Oppo Neo3 giá cả phù hợp, chất lượng siêu bền',42, 1,0)," +
+                "(14, 3, 'Oppo ZX', 'img_21', 14000000, 'Oppo Neo3 giá cả phù hợp, chất lượng siêu bền',45, 0,0)," +
 
                 // vo luoi
                 //Không dùng ảnh có độ phân giải cao Quân nhé. Vì nó sẽ ko load được và bị chết app - Anh Sơn gửi đến Quân.
-                "(15, 4, 'Ipad Pro 11', 'img_22', 20000000, 'Vớ lười nam/nũ chất liệu cao cấp',60, 0,0)," +
-                "(16, 4, 'Ipax 10X', 'img_23', 20000000, 'Vớ lười nam/nũ chất liệu cao cấp',60, 0,0)," +
-                "(17, 4, 'Ipax Air', 'img_24', 2000000, 'Vớ lười nam/nũ chất liệu cao cấp',60, 0,0)," +
-                "(18, 4, 'Ipax Gen 10', 'img_25', 20000000, 'Vớ lười nam/nũ chất liệu cao cấp',60, 0,0)," +
+                "(15, 4, 'Ipad Pro 11', 'img_22', 20000000, 'Ipad giá đẹp, màn hình siểu to, chơi game thỏa thích',60, 0,0)," +
+                "(16, 4, 'Ipax 10X', 'img_23', 20000000, 'Ipad giá đẹp, màn hình siểu to, chơi game thỏa thích',60, 0,0)," +
+                "(17, 4, 'Ipax Air', 'img_24', 2000000, 'Ipad giá đẹp, màn hình siểu to, chơi game thỏa thích',60, 0,0)," +
+                "(18, 4, 'Ipax Gen 10', 'img_25', 20000000, 'Ipad giá đẹp, màn hình siểu to, chơi game thỏa thích',60, 0,0)," +
 
                 //vo basic
-                "(19, 5, 'ViVo Y12S', 'img_26', 20000000, 'Vớ basic nam/nũ chất liệu cao cấp',60, 0,0)," +
-                "(20, 5, 'ViVo Y11', 'img_27', 20000000, 'Vớ basic nam/nũ chất liệu cao cấp',60, 0,0)," +
-                "(21, 5, 'ViVio Y13', 'img_28', 20000000, 'Vớ basic nam/nũ chất liệu cao cấp',60, 0,0)," +
-                "(22, 5, 'ViVo V25S', 'img_29', 20000000, 'Vớ basic nam/nũ chất liệu cao cấp',60, 0,0)"
+                "(19, 5, 'ViVo Y12S', 'img_26', 20000000, 'ViVo bền đẹp, phù hợp học sinh sinh viên, giá mềm',60, 0,0)," +
+                "(20, 5, 'ViVo Y11', 'img_27', 20000000, 'ViVo bền đẹp, phù hợp học sinh sinh viên, giá mềm',60, 0,0)," +
+                "(21, 5, 'ViVio Y13', 'img_28', 20000000, 'ViVo bền đẹp, phù hợp học sinh sinh viên, giá mềm',60, 0,0)," +
+                "(22, 5, 'ViVo V25S', 'img_29', 20000000, 'ViVo bền đẹp, phù hợp học sinh sinh viên, giá mềm',60, 0,0)"
 
 
         );
@@ -167,14 +167,14 @@ public class DBHelper extends SQLiteOpenHelper {
          * - 1: Da thanh toan
          * Cấu trúc bảng: hoaDon_id, sanPham_id, soLuong, trangThaiDonHang, trangThaiThanhToan */
 
-        db.execSQL("insert into HOADONCHITIET values" +
-                "(1, 2, 2, 0, 0)," +
-                "(1, 1, 3, 1, 1)," +
-                "(2, 3, 5, 2, 1)," +
-                "(3, 4, 4, 3, 0)," +
-                "(4, 20, 1, 0, 0)," +
-                "(5, 15, 4, 1, 1)," +
-                "(5, 16, 2, 4, 0)");
+//        db.execSQL("insert into HOADONCHITIET values" +
+//                "(1, 2, 2, 0, 0)," +
+//                "(1, 1, 3, 1, 1)," +
+//                "(2, 3, 5, 2, 1)," +
+//                "(3, 4, 4, 3, 0)," +
+//                "(4, 20, 1, 0, 0)," +
+//                "(5, 15, 4, 1, 1)," +
+//                "(5, 16, 2, 4, 0)");
     }
 
     @Override

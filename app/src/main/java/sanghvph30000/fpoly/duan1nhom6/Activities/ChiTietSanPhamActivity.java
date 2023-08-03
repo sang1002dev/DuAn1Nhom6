@@ -30,10 +30,8 @@ import sanghvph30000.fpoly.duan1nhom6.R;
 
 public class ChiTietSanPhamActivity extends AppCompatActivity {
     ImageView imgAnh_sanpham_chitiet, imgBack, imgGio_hang, imgYeu_thich, imgHome, imgThong_bao;
-    TextView tvTen_sanpham_chitiet, tvGia_sanpham_chitiet, tvSo_luong;
-    RecyclerView recyclerView_binh_luan;
+    TextView tvTen_sanpham_chitiet, tvGia_sanpham_chitiet, tvSo_luong,tvMota;
     Button btnChon_mua;
-    EditText edDialog_binh_luan;
     SanPham sanPham;
     ImageView imgYeuThich_frameSPChiTiet2;
 
@@ -55,6 +53,7 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
         tvTen_sanpham_chitiet = findViewById(R.id.tvTen_sanpham_chitiet);
         tvGia_sanpham_chitiet = findViewById(R.id.tvGia_sanpham_chitiet);
         tvSo_luong = findViewById(R.id.tvSo_luong);
+        tvMota = findViewById(R.id.tvMota);
         btnChon_mua = findViewById(R.id.btnChon_mua);
 
         sharedPreferences = getSharedPreferences("NGUOIDUNG", MODE_PRIVATE);
@@ -72,10 +71,11 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
         tvTen_sanpham_chitiet.setText(sanPham.getTenSanPham());
         tvGia_sanpham_chitiet.setText("" + sanPham.getGiaSanPham() + " VND");
         tvSo_luong.setText("" + sanPham.getSoLuongConLai());
+        tvMota.setText("" +sanPham.getMoTa());
         if (sanPham.getIsYeuThich() == 0) {
-            imgYeuThich_frameSPChiTiet2.setImageResource(R.drawable.frame4_trai_tim);
-        } else {
             imgYeuThich_frameSPChiTiet2.setImageResource(R.drawable.frame4_trai_tim2);
+        } else {
+            imgYeuThich_frameSPChiTiet2.setImageResource(R.drawable.frame4_trai_tim);
         }
 
 
@@ -144,19 +144,12 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
                 } else {
                     imgIsYeuThich.setImageResource(R.drawable.frame4_trai_tim);
                     sanPhamDAO.changeIsYeuThich(sanPham_id, 1);
+                    Toast.makeText(ChiTietSanPhamActivity.this, "Đã thêm vào yêu thích", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
     }
-
-
-
-
-
-
-
-
 
     public void chonMua(int nguoiDung_id, int sanPham_id) {
         GioHangDAO gioHangDAO = new GioHangDAO(ChiTietSanPhamActivity.this);
@@ -166,7 +159,7 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
         gioHang.setSoLuong(1);
         gioHang.setTrangThaiMua(0);
         if (gioHangDAO.themVaoGioHang(gioHang) > 0) {
-            Toast.makeText(this, "Da them vao gio hang", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Mặt hàng này đã tồn tại trong giỏ hàng", Toast.LENGTH_SHORT).show();
         }

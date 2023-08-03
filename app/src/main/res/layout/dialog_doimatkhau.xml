@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="300dp"
-    android:background="#FFEFE0"
+    android:background="@drawable/img"
     android:orientation="vertical"
     android:padding="10dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/img"
+        android:textColor="#9903A9F4"
         android:gravity="center"
         android:text="Đổi mật khẩu"
         android:textSize="30sp" />

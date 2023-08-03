@@ -45,6 +45,7 @@
     </item>
 
     <item
+        android:id="@+id/menuQlForAdmin"
         android:title="Quản lý dành cho admin">
         <menu>
             <item

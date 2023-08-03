@@ -62,8 +62,9 @@ public class SanPhamAdapter2 extends RecyclerView.Adapter<SanPhamAdapter2.MyView
             int resourceId = context.getResources().getIdentifier(srcImg, "drawable", context.getPackageName());
             holder.imgSanPham_itemGrid.setImageResource(resourceId);
         }
-
+        //holder.tvTenDT.setText(String.valueOf(list.get(position).getTenSanPham()));
         holder.tvGiaSanPham_itemGrid.setText(String.valueOf(list.get(position).getGiaSanPham()) + " vnd");
+
         holder.imgGioHang_itemGrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +108,7 @@ public class SanPhamAdapter2 extends RecyclerView.Adapter<SanPhamAdapter2.MyView
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imgSanPham_itemGrid = itemView.findViewById(R.id.imgSanPham_itemGrid);
+           // tvTenDT = itemView.findViewById(R.id.tvTenDT);
             imgGioHang_itemGrid = itemView.findViewById(R.id.imgGioHang_itemGrid);
             tvGiaSanPham_itemGrid = itemView.findViewById(R.id.tvGiaSanPham_itemGrid);
             cardView = itemView.findViewById(R.id.cardView);

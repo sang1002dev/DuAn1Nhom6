@@ -18,7 +18,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/img_user_qlnd"
-            android:src="@drawable/sang"
+            android:src="@drawable/imguser"
             android:scaleType="centerCrop"
             android:layout_width="100dp"
             android:layout_height="100dp"

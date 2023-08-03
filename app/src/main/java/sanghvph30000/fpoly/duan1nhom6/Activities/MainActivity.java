@@ -1,10 +1,12 @@
 package sanghvph30000.fpoly.duan1nhom6.Activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -25,6 +27,7 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import sanghvph30000.fpoly.duan1nhom6.DAO.HoaDonChiTietDAO;
@@ -73,9 +76,11 @@ public class MainActivity extends AppCompatActivity {
 //        Toast.makeText(this, list.size() + "", Toast.LENGTH_SHORT).show();
 
         //check data HOADONCHITIET
-        HoaDonChiTietDAO hoaDonChiTietDAO = new HoaDonChiTietDAO(MainActivity.this);
-        ArrayList<HoaDonChiTiet> listDonHangByHDCT = hoaDonChiTietDAO.getDonHangByHDCT(0);
-        Toast.makeText(this, listDonHangByHDCT.size() + "", Toast.LENGTH_SHORT).show();
+//        HoaDonChiTietDAO hoaDonChiTietDAO = new HoaDonChiTietDAO(MainActivity.this);
+//        SharedPreferences sharedPreferences = getContext().getSharedPreferences("NGUOIDUNG", Context.MODE_PRIVATE);
+//        int nguoiDung_id = sharedPreferences.getInt("nguoiDung_id",-1);
+//        ArrayList<HoaDonChiTiet> listDonHangByHDCT = hoaDonChiTietDAO.getDonHangByHDCT(0,nguoiDung_id);
+//        Toast.makeText(this, listDonHangByHDCT.size() + "", Toast.LENGTH_SHORT).show();
 
 
         //Ánh xạ
@@ -116,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     public void setActionForNavigationView(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -184,7 +190,17 @@ public class MainActivity extends AppCompatActivity {
         tvName_header.setText(hoTen);
         tvPhoneNumber_header.setText(soDienThoai);
         tvEmail_header.setText(email);
+        int loaiTaiKhoan = sharedPreferences.getInt("loaiTaiKhoan", -1);
+        if (loaiTaiKhoan == 1){
+            Menu menu = navigationView.getMenu();
+            menu.findItem(R.id.menuTrangChu).setVisible(false);
+            menu.findItem(R.id.menuYeuThich).setVisible(false);
+            menu.findItem(R.id.menuDonHang).setVisible(false);
 
+        }else {
+            Menu menu = navigationView.getMenu();
+            menu.findItem(R.id.menuQlForAdmin).setVisible(false);
+        }
         //Chuyen man hinh chi tiet
         imgMuiTen_header.setOnClickListener(new View.OnClickListener() {
             @Override

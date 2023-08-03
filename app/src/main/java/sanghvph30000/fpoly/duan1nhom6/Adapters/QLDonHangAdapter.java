@@ -157,7 +157,7 @@ public class QLDonHangAdapter extends RecyclerView.Adapter<QLDonHangAdapter.MyVi
     public void reloadData(int trangThaiDonHang) {
         HoaDonChiTietDAO hoaDonChiTietDAO = new HoaDonChiTietDAO(context);
         list.clear();
-        list = hoaDonChiTietDAO.getDonHangByHDCT(trangThaiDonHang);
+        list = hoaDonChiTietDAO.getDonHangByHDCTForAdmin(trangThaiDonHang);
         notifyDataSetChanged();
     }
 }

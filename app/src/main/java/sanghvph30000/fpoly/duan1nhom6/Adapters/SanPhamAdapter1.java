@@ -99,12 +99,12 @@ public class SanPhamAdapter1 extends RecyclerView.Adapter<SanPhamAdapter1.myView
                 SanPhamDAO sanPhamDAO = new SanPhamDAO(context);
                 boolean check = sanPhamDAO.changeIsYeuThich(sanPham_id, 0);
                 if (check) {
-                    Toast.makeText(context, "Thanh cong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Đã xóa khỏi yêu thích", Toast.LENGTH_SHORT).show();
                     notifyDataSetChanged();
                     list.clear();
                     list = sanPhamDAO.getDsSanPhamYeuThich();
                 } else {
-                    Toast.makeText(context, "That bai", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Xóa thất bại", Toast.LENGTH_SHORT).show();
                 }
             }
         });
