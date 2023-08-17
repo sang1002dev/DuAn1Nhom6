@@ -48,7 +48,7 @@ public class Oppo_Fragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        recyclerView = view.findViewById(R.id.recyclerView_vocothap);
+        recyclerView = view.findViewById(R.id.recyclerView_vocotrung);
         sanPhamDAO = new SanPhamDAO(getContext());
         loadDataGridLayout(recyclerView);
         super.onViewCreated(view, savedInstanceState);

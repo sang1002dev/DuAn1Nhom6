@@ -49,7 +49,7 @@ public class Iphone_Fragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        recyclerView = view.findViewById(R.id.recyclerView_vobasic);
+        recyclerView = view.findViewById(R.id.recyclerView_vocothap);
         sanPhamDAO = new SanPhamDAO(getContext());
         loadDataGridLayout(recyclerView);
         super.onViewCreated(view, savedInstanceState);

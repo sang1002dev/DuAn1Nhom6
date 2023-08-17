@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -29,12 +31,11 @@ import sanghvph30000.fpoly.duan1nhom6.R;
 
 
 public class ChiTietSanPhamActivity extends AppCompatActivity {
-    ImageView imgAnh_sanpham_chitiet, imgBack, imgGio_hang, imgYeu_thich, imgHome, imgThong_bao;
+    ImageView imgAnh_sanpham_chitiet, imgBack, imgGio_hang, imgYeu_thich, imgHome;
     TextView tvTen_sanpham_chitiet, tvGia_sanpham_chitiet, tvSo_luong,tvMota;
     Button btnChon_mua;
     SanPham sanPham;
     ImageView imgYeuThich_frameSPChiTiet2;
-
     SharedPreferences sharedPreferences;
     int getNguoiDung_id;
 
@@ -58,7 +59,15 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("NGUOIDUNG", MODE_PRIVATE);
         getNguoiDung_id = sharedPreferences.getInt("nguoiDung_id", 0);
+        int loaiTaiKhoan = sharedPreferences.getInt("loaiTaiKhoan", -1);
+        if (loaiTaiKhoan == 1){
 
+            btnChon_mua.setVisibility(View.GONE);
+            imgGio_hang.setVisibility(View.GONE);
+            imgYeu_thich.setVisibility(View.GONE);
+            imgHome.setVisibility(View.GONE);
+            imgYeuThich_frameSPChiTiet2.setVisibility(View.GONE);
+        }
         //lay san pham tu ben adapter san pham 2, khi click vao san pham se lay san pham do va truyen qua chi tiet san pham
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();

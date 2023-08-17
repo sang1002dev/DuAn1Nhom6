@@ -68,6 +68,7 @@
                 android:title="Quản lý sản phẩm"
                 android:icon="@drawable/frame4_mui_ten"/>
             <item
+                android:id="@+id/menu_ThongKeAdmin"
                 android:title="Thông kê doanh thu"
                 android:icon="@drawable/frame4_mui_ten"/>
         </menu>

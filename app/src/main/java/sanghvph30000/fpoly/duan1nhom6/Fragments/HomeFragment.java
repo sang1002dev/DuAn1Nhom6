@@ -1,6 +1,9 @@
 package sanghvph30000.fpoly.duan1nhom6.Fragments;
 
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,12 +34,14 @@ import sanghvph30000.fpoly.duan1nhom6.R;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView_frame4;
-    private ImageView imgHome, imgYeu_thich, imgGio_hang, imgThong_bao;
+    private ImageView imgHome, imgYeu_thich, imgGio_hang;
     private SanPhamDAO sanPhamDAO;
     ArrayList<SanPham> listtemporary;
     ArrayList<SanPham> oriList;
     private TextInputEditText edTimkiem;
     private SanPhamAdapter2 searchResultsAdapter;
+    SharedPreferences sharedPreferences;
+    int getNguoiDung_id;
 
     @Nullable
     @Override
@@ -51,7 +56,18 @@ public class HomeFragment extends Fragment {
         edTimkiem = view.findViewById(R.id.edTimKiem);
 
         oriList = sanPhamDAO.getDsSanPham();
+        sharedPreferences = getContext().getSharedPreferences("NGUOIDUNG", Context.MODE_PRIVATE);
+        getNguoiDung_id = sharedPreferences.getInt("nguoiDung_id", 0);
 
+        int loaiTaiKhoan = sharedPreferences.getInt("loaiTaiKhoan", -1);
+        if (loaiTaiKhoan == 1){
+
+
+            imgGio_hang.setVisibility(View.GONE);
+            imgYeu_thich.setVisibility(View.GONE);
+            imgHome.setVisibility(View.GONE);
+
+        }
         // Set up your RecyclerView and adapter
 
         ImageView searchButton = view.findViewById(R.id.imgTimKiem);

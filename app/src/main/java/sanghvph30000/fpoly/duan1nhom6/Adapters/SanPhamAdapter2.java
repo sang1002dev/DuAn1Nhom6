@@ -62,7 +62,7 @@ public class SanPhamAdapter2 extends RecyclerView.Adapter<SanPhamAdapter2.MyView
             int resourceId = context.getResources().getIdentifier(srcImg, "drawable", context.getPackageName());
             holder.imgSanPham_itemGrid.setImageResource(resourceId);
         }
-        //holder.tvTenDT.setText(String.valueOf(list.get(position).getTenSanPham()));
+        holder.tvTenDT.setText(String.valueOf(list.get(position).getTenSanPham()));
         holder.tvGiaSanPham_itemGrid.setText(String.valueOf(list.get(position).getGiaSanPham()) + " vnd");
 
         holder.imgGioHang_itemGrid.setOnClickListener(new View.OnClickListener() {
@@ -102,13 +102,13 @@ public class SanPhamAdapter2 extends RecyclerView.Adapter<SanPhamAdapter2.MyView
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgSanPham_itemGrid, imgGioHang_itemGrid;
-        TextView tvGiaSanPham_itemGrid;
+        TextView tvGiaSanPham_itemGrid,tvTenDT;
         CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imgSanPham_itemGrid = itemView.findViewById(R.id.imgSanPham_itemGrid);
-           // tvTenDT = itemView.findViewById(R.id.tvTenDT);
+            tvTenDT = itemView.findViewById(R.id.tvTenDT);
             imgGioHang_itemGrid = itemView.findViewById(R.id.imgGioHang_itemGrid);
             tvGiaSanPham_itemGrid = itemView.findViewById(R.id.tvGiaSanPham_itemGrid);
             cardView = itemView.findViewById(R.id.cardView);
@@ -125,7 +125,7 @@ public class SanPhamAdapter2 extends RecyclerView.Adapter<SanPhamAdapter2.MyView
         gioHang.setSoLuong(1);
         gioHang.setTrangThaiMua(0);
         if(gioHangDAO.themVaoGioHang(gioHang) > 0){
-            Toast.makeText(context, "Da them vao gio hang", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(context, "Mặt hàng này đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
         }

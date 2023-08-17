@@ -65,4 +65,7 @@ public class SanPhamThanhToanAdapter extends RecyclerView.Adapter<SanPhamThanhTo
             imgAnh_sp = itemView.findViewById(R.id.imgAnh_sp);
         }
     }
+    public int getSoLuongMua(int position) {
+        return list.get(position).getSoLuong();
+    }
 }

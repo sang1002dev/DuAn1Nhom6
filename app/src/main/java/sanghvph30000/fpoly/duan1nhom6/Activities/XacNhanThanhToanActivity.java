@@ -22,9 +22,11 @@ import sanghvph30000.fpoly.duan1nhom6.Adapters.SanPhamThanhToanAdapter;
 import sanghvph30000.fpoly.duan1nhom6.DAO.GioHangDAO;
 import sanghvph30000.fpoly.duan1nhom6.DAO.HoaDonChiTietDAO;
 import sanghvph30000.fpoly.duan1nhom6.DAO.HoaDonDAO;
+import sanghvph30000.fpoly.duan1nhom6.DAO.SanPhamDAO;
 import sanghvph30000.fpoly.duan1nhom6.Models.GioHang;
 import sanghvph30000.fpoly.duan1nhom6.Models.HoaDon;
 import sanghvph30000.fpoly.duan1nhom6.Models.HoaDonChiTiet;
+import sanghvph30000.fpoly.duan1nhom6.Models.SanPham;
 import sanghvph30000.fpoly.duan1nhom6.R;
 
 
@@ -33,6 +35,7 @@ public class XacNhanThanhToanActivity extends AppCompatActivity {
     TextView tvNguoi_nhan_hang, tvSdt_nguoi_nhan, tvGia_tam_tinh, tvThanh_tien, tvDia_chi_nhan_hang;
     Button btnXac_nhan_dat_hang;
     HoaDonDAO hoaDonDAO;
+    SanPhamDAO sanPhamDAO;
     HoaDon hoaDon;
     SharedPreferences sharedPreferences;
     int tongTien, nguoiDung_id;
@@ -56,7 +59,7 @@ public class XacNhanThanhToanActivity extends AppCompatActivity {
         btnXac_nhan_dat_hang = findViewById(R.id.btnXac_nhan_dat_hang);
         sharedPreferences = getSharedPreferences("NGUOIDUNG", MODE_PRIVATE);
         nguoiDung_id = sharedPreferences.getInt("nguoiDung_id",-1);
-
+        sanPhamDAO = new SanPhamDAO(this);
         hoaDonDAO = new HoaDonDAO(this);
         hoaDonChiTietDAO = new HoaDonChiTietDAO(this);
 
@@ -128,6 +131,18 @@ public class XacNhanThanhToanActivity extends AppCompatActivity {
                                     hdct.setTrangThaiDonHang(0);
                                     if(hoaDonChiTietDAO.themHoaDonChiTiet(hdct) > 0){
                                         Toast.makeText(XacNhanThanhToanActivity.this, "Ok", Toast.LENGTH_SHORT).show();
+                                        int decreaseAmount = gioHang.getSoLuong();;
+
+                                        // Lấy thông tin sản phẩm từ cơ sở dữ liệu bằng ID sản phẩm
+                                        SanPham sanPham = sanPhamDAO.getSanPhamById(gioHang.getSanPham_id());
+                                        if (sanPham != null) {
+                                            int currentQuantity = sanPham.getSoLuongConLai();
+                                            sanPham.setSoLuongConLai(currentQuantity - decreaseAmount);
+
+                                            // Cập nhật số lượng sản phẩm vào cơ sở dữ liệu hoặc nguồn dữ liệu tương ứng
+                                            // Ví dụ: sanPhamDAO.capNhatSanPham(sanPham);
+                                            sanPhamDAO.SuaSanPham(sanPham);
+                                        }
                                     }
                                 }
                                 startActivity(new Intent(XacNhanThanhToanActivity.this, MainActivity.class));

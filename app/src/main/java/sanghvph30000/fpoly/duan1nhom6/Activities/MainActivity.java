@@ -41,6 +41,8 @@ import sanghvph30000.fpoly.duan1nhom6.Fragments.Iphone_Fragment;
 import sanghvph30000.fpoly.duan1nhom6.Fragments.SamSung_Fragment;
 import sanghvph30000.fpoly.duan1nhom6.Fragments.Oppo_Fragment;
 import sanghvph30000.fpoly.duan1nhom6.Fragments.Ipad_Fragment;
+import sanghvph30000.fpoly.duan1nhom6.Fragments.ThongKeAdminFragment;
+import sanghvph30000.fpoly.duan1nhom6.Fragments.ViVo_Fragment;
 import sanghvph30000.fpoly.duan1nhom6.Fragments.YeuThich_Fragment;
 import sanghvph30000.fpoly.duan1nhom6.Models.HoaDonChiTiet;
 import sanghvph30000.fpoly.duan1nhom6.R;
@@ -150,7 +152,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (menuId == R.id.menuSanPham) {
                     fragment = new SanPham_Fragment();
                     fragmentManager.beginTransaction().replace(R.id.frameLayout_frame4, fragment).commit();
-
+                } else if (menuId == R.id.menuVoLuoi) {
+                    fragment = new SamSung_Fragment();
+                    fragmentManager.beginTransaction().replace(R.id.frameLayout_frame4, fragment).commit();
                 } else if (menuId == R.id.menuVoBasic) {
                     fragment = new Iphone_Fragment();
                     fragmentManager.beginTransaction().replace(R.id.frameLayout_frame4, fragment).commit();
@@ -160,7 +164,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (menuId == R.id.menuDonHang) {
                     fragment = new DonHang_Fragment();
                     fragmentManager.beginTransaction().replace(R.id.frameLayout_frame4, fragment).commit();
-
+                } else if (menuId == R.id.menu_ThongKeAdmin) {
+                    fragment = new ThongKeAdminFragment();
+                    fragmentManager.beginTransaction().replace(R.id.frameLayout_frame4, fragment).commit();
                 }else if (menuId == R.id.menuQlDonHang){
                     fragment = new QL_DonHang_Fragment();
                     fragmentManager.beginTransaction().replace(R.id.frameLayout_frame4, fragment).commit();

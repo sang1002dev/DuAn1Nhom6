@@ -131,4 +131,8 @@ public class SanPham implements Serializable {
     public void setTenloaisanpham(String tenloaisanpham) {
         this.tenloaisanpham = tenloaisanpham;
     }
+    public void updateSoLuongConLai(int soLuongGiam) {
+        // Giảm số lượng đi một lượng cho trước
+        soLuongConLai -= soLuongGiam;
+    }
 }

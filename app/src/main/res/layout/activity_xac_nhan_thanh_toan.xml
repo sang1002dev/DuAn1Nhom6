@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30sp"
-                    android:text="Hình thức thanh toán"
+                    android:text="Xác nhận thanh toán"
                     android:textColor="#4E352F"
                     android:textSize="25sp" />
             </LinearLayout>

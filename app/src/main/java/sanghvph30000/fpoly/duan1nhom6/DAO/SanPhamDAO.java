@@ -233,5 +233,30 @@ public class SanPhamDAO {
         values.put("isXoaMem", 1);
         return  db.update("SANPHAM", values, "sanPham_id=?", new String[]{String.valueOf(xoamem)});
     }
+    public SanPham getSanPhamById(int sanPhamId) {
+        SanPham sanPham = null;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM SANPHAM WHERE sanPham_id=?", new String[]{String.valueOf(sanPhamId)});
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+            if (cursor.getCount() > 0) {
+                sanPham = new SanPham(
+                        cursor.getInt(0), //sanPham_id
+                        cursor.getInt(1), //loaiSanPham_id
+                        cursor.getString(2), //tenSanPham
+                        cursor.getString(3), //anhSanPham
+                        cursor.getInt(4),    //giaSanPham
+                        cursor.getString(5), //moTa
+                        cursor.getInt(6)     //soLuongConLai
+                );
+            }
+            cursor.close();
+        }
+
+        return sanPham;
+    }
+
+    // Các mã khác của lớp SanPhamDAO
 
 }
